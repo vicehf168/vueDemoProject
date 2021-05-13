@@ -22,8 +22,7 @@
 
 <script>
 	import headTop from '../components/headTop'
-	import tendency from '../components/tendency' 
-	import dtime from 'time-formater'
+	import tendency from '../components/tendency'
 	import {userCount, orderCount, getUserCount, getOrderCount, adminDayCount, adminCount} from '@/api/getData'
     export default {
     	data(){
@@ -44,10 +43,6 @@
     	},
     	mounted(){
     		this.initData();
-    		for (let i = 6; i > -1; i--) {
-    			const date = dtime(new Date().getTime() - 86400000*i).format('YYYY-MM-DD')
-    			this.sevenDay.push(date)
-    		}
     		this.getSevenData();
     	},
         computed: {
@@ -55,18 +50,7 @@
         },
     	methods: {
     		async initData(){
-    			const today = dtime().format('YYYY-MM-DD')
-    			Promise.all([userCount(today), orderCount(today), adminDayCount(today), getUserCount(), getOrderCount(), adminCount()])
-    			.then(res => {
-    				this.userCount = res[0].count;
-    				this.orderCount = res[1].count;
-                    this.adminCount = res[2].count;
-                    this.allUserCount = res[3].count;
-                    this.allOrderCount = res[4].count;
-                    this.allAdminCount = res[5].count;
-    			}).catch(err => {
-    				console.log(err)
-    			})
+
     		},
     		async getSevenData(){
     			const apiArr = [[],[],[]];
