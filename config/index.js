@@ -27,7 +27,19 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    // proxyTable: {
+      //     //     '/demoapp': {
+      //     //         // target: 'https://passport.baidu.com/v2/',
+      //     //         target: 'http://127.0.0.1:8899/', // 真是服务器的接口地址 // http://localhost:54321/json.data.json,
+      //     //         secure: true, // 如果是 https ,需要开启这个选项
+      //     //         changeOrigin: true, // 是否是跨域请求?肯定是啊,不跨域就没有必要配置这个proxyTable了.
+      //     //         pathRewirte: {
+      //     //             // 这里是追加链接,比如真是接口里包含了 /api,就需要这样配置.
+      //     //
+      //     //             '/^demoapp': '/demoapp'
+      //     //         }
+      //     //     }
+      //     // },
     context: [ //代理路径
         '/shopping',
         '/ugc',
@@ -42,7 +54,7 @@ module.exports = {
         '/payapi',
         '/admin',
         '/statis',
-        '/img',
+        '/img'
     ],
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README

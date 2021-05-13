@@ -4,6 +4,9 @@ import router from './router'
 import store from './store/'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+// 配置vue请求后台的公共域名（类似于ajax的接口请求）
+import request from './utils/request'
+Vue.prototype.$http = request
 
 Vue.config.productionTip = false;
 

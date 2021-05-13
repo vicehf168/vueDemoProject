@@ -8,13 +8,15 @@ const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manag
 const home = r => require.ensure([], () => r(require('@/page/home')), 'home');
 const addShop = r => require.ensure([], () => r(require('@/page/addShop')), 'addShop');
 const addGoods = r => require.ensure([], () => r(require('@/page/addGoods')), 'addGoods');
-const userList = r => require.ensure([], () => r(require('@/page/userList')), 'userList');
-const shopList = r => require.ensure([], () => r(require('@/page/shopList')), 'shopList');
-const foodList = r => require.ensure([], () => r(require('@/page/foodList')), 'foodList');
-const orderList = r => require.ensure([], () => r(require('@/page/orderList')), 'orderList');
-const adminList = r => require.ensure([], () => r(require('@/page/adminList')), 'adminList');
-const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor');
-const newMember = r => require.ensure([], () => r(require('@/page/newMember')), 'newMember');
+const forwardPublicTaskList = r => require.ensure([], () => r(require('@/page/forwardPublicTaskList')), 'forwardPublicTaskList');
+const forwardInviteTaskList = r => require.ensure([], () => r(require('@/page/forwardInviteTaskList')), 'forwardInviteTaskList');
+const acceptanceOrder = r => require.ensure([], () => r(require('@/page/acceptanceOrder')), 'acceptanceOrder');
+const settlementOrderList = r => require.ensure([], () => r(require('@/page/settlementOrderList')), 'settlementOrderList');
+const clStatemengOrder = r => require.ensure([], () => r(require('@/page/clStatemengOrder')), 'clStatemengOrder');
+const reviewOrderList = r => require.ensure([], () => r(require('@/page/reviewOrderList')), 'reviewOrderList');
+const payOrderList = r => require.ensure([], () => r(require('@/page/payOrderList')), 'payOrderList');
+const xvReviewOrderList = r => require.ensure([], () => r(require('@/page/xvReviewOrderList')), 'xvReviewOrderList');
+const xvFeeIssueOrderList = r => require.ensure([], () => r(require('@/page/xvFeeIssueOrderList')), 'xvFeeIssueOrderList');
 const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
 const vueEdit = r => require.ensure([], () => r(require('@/page/vueEdit')), 'vueEdit');
 const adminSet = r => require.ensure([], () => r(require('@/page/adminSet')), 'adminSet');
@@ -43,34 +45,42 @@ const routes = [
 			component: addGoods,
 			meta: ['添加数据', '添加商品'],
 		},{
-			path: '/userList',
-			component: userList,
-			meta: ['数据管理', '用户列表'],
+			path: '/forwardPublicTaskList',
+			component: forwardPublicTaskList,
+			meta: ['正向发布任务', '正向公开任务'],
 		},{
-			path: '/shopList',
-			component: shopList,
-			meta: ['数据管理', '商家列表'],
+			path: '/forwardInviteTaskList',
+			component: forwardInviteTaskList,
+			meta: ['正向发布任务', '正向邀请任务'],
 		},{
-			path: '/foodList',
-			component: foodList,
-			meta: ['数据管理', '食品列表'],
+            path: '/acceptanceOrder',
+            component: acceptanceOrder,
+            meta: ['正向发布任务', '生成待验收订单'],
+        },{
+			path: '/settlementOrderList',
+			component: settlementOrderList,
+			meta: ['正向发布任务', '生成待结算订单'],
 		},{
-			path: '/orderList',
-			component: orderList,
-			meta: ['数据管理', '订单列表'],
+			path: '/clStatemengOrder',
+			component: clStatemengOrder,
+			meta: ['正向发布任务', '承揽报酬订单'],
 		},{
-			path: '/adminList',
-			component: adminList,
-			meta: ['数据管理', '管理员列表'],
+			path: '/reviewOrderList',
+			component: reviewOrderList,
+			meta: ['生成V端订单', '大V端审核订单'],
 		},{
-			path: '/visitor',
-			component: visitor,
-			meta: ['图表', '用户分布'],
+			path: '/payOrderList',
+			component: payOrderList,
+			meta: ['生成V端订单', '大V端支付订单'],
 		},{
-			path: '/newMember',
-			component: newMember,
-			meta: ['图表', '用户数据'],
-		},{
+            path: '/xvReviewOrderList',
+            component: xvReviewOrderList,
+            meta: ['生成V端订单', '小V端审核订单'],
+        },{
+            path: '/xvFeeIssueOrderList',
+            component: xvFeeIssueOrderList,
+            meta: ['生成V端订单', '小V端费用发放订单'],
+        },{
 			path: '/uploadImg',
 			component: uploadImg,
 			meta: ['文本编辑', 'MarkDown'],
