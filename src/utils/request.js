@@ -10,7 +10,7 @@ import axios from 'axios';
  */
 
 const instance = axios.create({
-    baseURL: 'http://127.0.0.1:8899/demoapp',
+    baseURL: 'http://uatdatatools-uat.renliwo.com/demoapp',
     // baseURL: '/demoapp',
     withCredentials: true,
 });
