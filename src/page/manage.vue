@@ -3,7 +3,7 @@
 		<el-row style="height: 100%;">
 	  		<el-col :span="4"  style="min-height: 100%; background-color: #324057;">
 				<el-menu :default-active="defaultActive" style="min-height: 100%;" theme="dark" router>
-					<el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
+<!--					<el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>-->
 					<el-submenu index="2">
 						<template slot="title"><i class="el-icon-document"></i>正向发布任务</template>
 						<el-menu-item index="forwardPublicTaskList">正向公开任务</el-menu-item>
@@ -25,20 +25,20 @@
                         <el-menu-item index="xvReviewOrderList">小V端待审核订单</el-menu-item>
                         <el-menu-item index="xvFeeIssueOrderList">小V端费用发放订单</el-menu-item>
 					</el-submenu>
-					<el-submenu index="5">
-						<template slot="title"><i class="el-icon-edit"></i>编辑</template>
-						<!-- <el-menu-item index="uploadImg">上传图片</el-menu-item> -->
-						<el-menu-item index="vueEdit">文本编辑</el-menu-item>
-					</el-submenu>
-					<el-submenu index="6">
-						<template slot="title"><i class="el-icon-setting"></i>设置</template>
-						<el-menu-item index="adminSet">管理员设置</el-menu-item>
-						<!-- <el-menu-item index="sendMessage">发送通知</el-menu-item> -->
-					</el-submenu>
-					<el-submenu index="7">
-						<template slot="title"><i class="el-icon-warning"></i>说明</template>
-						<el-menu-item index="explain">说明</el-menu-item>
-					</el-submenu>
+<!--					<el-submenu index="5">-->
+<!--						<template slot="title"><i class="el-icon-edit"></i>编辑</template>-->
+<!--						&lt;!&ndash; <el-menu-item index="uploadImg">上传图片</el-menu-item> &ndash;&gt;-->
+<!--						<el-menu-item index="vueEdit">文本编辑</el-menu-item>-->
+<!--					</el-submenu>-->
+<!--					<el-submenu index="6">-->
+<!--						<template slot="title"><i class="el-icon-setting"></i>设置</template>-->
+<!--						<el-menu-item index="adminSet">管理员设置</el-menu-item>-->
+<!--						&lt;!&ndash; <el-menu-item index="sendMessage">发送通知</el-menu-item> &ndash;&gt;-->
+<!--					</el-submenu>-->
+<!--					<el-submenu index="7">-->
+<!--						<template slot="title"><i class="el-icon-warning"></i>说明</template>-->
+<!--						<el-menu-item index="explain">说明</el-menu-item>-->
+<!--					</el-submenu>-->
 				</el-menu>
 			</el-col>
 			<el-col :span="20" style="height: 100%;overflow: auto;">

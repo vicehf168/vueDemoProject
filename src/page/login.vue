@@ -58,7 +58,23 @@
 		methods: {
 			...mapActions(['getAdminData']),
 			async submitForm(formName) {
-                this.$router.push('manage')
+			    if (!this.loginForm.username | !(this.loginForm.username.trim())){
+                    this.loginForm.username = ''
+			        alert('请输入用户名')
+                    return
+                }
+			    if(!this.loginForm.password | !(this.loginForm.password.trim())){
+                    this.loginForm.password = ''
+                    alert('请输入密码')
+                    return
+                }
+			    if (this.loginForm.username == 'admin' && this.loginForm.password == '123456'){
+                    this.$router.push('forwardPublicTaskList')
+                }else{
+			        alert('用户名或密码错误')
+                    return
+                }
+                // this.$router.push('forwardPublicTaskList')
 				// this.$refs[formName].validate(async (valid) => {
 				// 	if (valid) {
 				// 		const res = await login({user_name: this.loginForm.username, password: this.loginForm.password})
