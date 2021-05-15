@@ -105,7 +105,17 @@
                             //this.formModel是在return中初始化的几个输入框变量，传到后端就是username、pwd等动态绑定到的变量的值
                             createReviewOrder(this.formModel).then(res => {        //res是后台接口返回的数据
                                 console.log(res)
-                                alert('发布成功!')
+                                if (res == 'success'){
+                                    this.$message({
+                                        message: '发布成功',
+                                        type: 'success'
+                                    });
+                                }else{
+                                    this.$message({
+                                        message: res,
+                                        type: 'error'
+                                    });
+                                }
                             })
                         }else{
                             return false

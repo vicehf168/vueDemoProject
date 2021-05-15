@@ -122,7 +122,17 @@
                                 }
                                 forwardInviteTask(this.formModel).then(res => {
                                     console.log(res)
-                                    alert('发布成功!')
+                                    if (res == 'success'){
+                                        this.$message({
+                                            message: '发布成功',
+                                            type: 'success'
+                                        });
+                                    }else{
+                                        this.$message({
+                                            message: res,
+                                            type: 'error'
+                                        });
+                                    }
                                 })
                             }else{
                                 return false
