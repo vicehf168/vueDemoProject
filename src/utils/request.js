@@ -12,8 +12,8 @@ import axios from 'axios';
 import { Loading } from 'element-ui';
 var loading = null;
 const instance = axios.create({
-    // baseURL: 'http://uatdatatools-uat.renliwo.com/demoapp',
-    baseURL: 'http://127.0.0.1:8899/demoapp',
+    baseURL: 'http://uatdatatools-uat.renliwo.com/demoapp',
+    // baseURL: 'http://127.0.0.1:8899/demoapp',
     // baseURL: '/demoapp',
     withCredentials: true,
 });
